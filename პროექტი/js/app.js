@@ -1,0 +1,21 @@
+const navSlide = () =>{
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+    
+    burger.addEventListener('click', () => {
+        //Toggle ნავიგაციისთვის
+        nav.classList.toggle('nav-active');
+        //ლინკების ანიმაცია
+        navLinks.forEach((link, index) =>{
+            if(link.style.animation){
+                link.style.animation = ''
+            } else{
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index/7 + 0.5}s`;
+            }
+        });
+        //Burger ანიმაცია
+        burger.classList.toggle('toggle');
+    });
+}
+navSlide(); /*ფუნქციის გამოძახება*/

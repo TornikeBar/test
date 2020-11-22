@@ -1,0 +1,161 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height:8vh;
+    background-color: #5d4954;
+    font-family: 'Poppins', sans-serif;
+}
+.logo{
+    color:rgb(226, 226, 226);
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    font-size:20px;
+    font-family: cursive; /*არ გვინდა???*/
+}
+.logo a{
+    text-decoration: none;
+    color:rgb(226, 226, 226);
+}
+.nav-links{
+    display:flex;
+    justify-content: space-around;
+    width:30%;
+}
+.nav-links li.active a{
+    background-color: white;
+    color: black;
+}
+.nav-links li{
+    list-style: none;
+    display: inline-block;
+    
+}
+.nav-links li a:hover{
+    background-color: white;
+    color: black;
+}
+.nav-links a{
+    color:rgb(226, 226, 226);
+    text-decoration:none;
+    letter-spacing: 1px;
+    font-weight:bold;
+    font-size:14px;
+    transition: 0.6s ease;
+    border: 1px transparent;
+    padding: 5px;
+}
+/*Burger მენუ რომ არ გამოჩნდეს კომპიუტერზე*/
+.burger{
+    display:none;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color:rgb(226, 226, 226);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .title{ /*მობილურის ვერსიაზე ბურგერ მენიუ რომ გამოდის ვერ ფარავს ამ სათაურს და Log in Register-ს*/
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 100px;
+    transform: translate(-50%, -50%);
+    font-family: 'Knewave', cursive;
+    color: rgb(226, 226, 226);
+    font-size: 40px;
+  }
+  .button{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .btn{
+      border: 1 px solid #fff;
+      padding: 10px 30px;
+      color: rgb(226, 226, 226);
+      text-decoration: none;
+      font-size: 30px;
+  }
+.banner{ 
+    width: 100%;
+    display: block;
+}
+.banner .banner-image{
+    width: 100%;
+    display: block;
+    height: auto;
+}
+@media screen and (max-width:1024px){
+    .nav-links{
+        width: 60%;
+    }
+}
+/*რესპონსივისთვის*/
+@media screen and (max-width:768px){
+    .title{ 
+        opacity:0;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #5d4954;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translate(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity:0;
+    }
+    .nav-links li a:hover{
+        background-color: white;
+        color: black;
+    }
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+.nav-active{
+    transform: translate(0%);
+}
+/*Burger მენიუში ნელ-ნელა რომ ამოვიდეს ლინკები*/
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px)
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+/*Burger მენიუს ანიმაცია */
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
